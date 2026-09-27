@@ -49,7 +49,7 @@ export default function KineticScene(){
     const onContextLost=(e:Event)=>{e.preventDefault();setReady(false)};renderer.domElement.addEventListener('webglcontextlost',onContextLost);
     const render=(now:number)=>{if(destroyed)return;raf=requestAnimationFrame(render);if(now-last<(mobile?1000/24:1000/36))return;const delta=Math.min((now-last)/1000,.05);last=now;if(!visible||document.hidden)return;const pointerMoving=Math.abs(targetX-sculpture.rotation.y)>.001||Math.abs(targetY-sculpture.rotation.x)>.001;if((pausedRef.current||reduced.matches)&&!pointerMoving&&!needsRender)return;
      if(!pausedRef.current&&!reduced.matches){time+=delta;knot.rotation.y=.1+time*.15;knot.rotation.z=.2+Math.sin(time*.23)*.16;sculpture.position.y=.26+Math.sin(time*.8)*.09;orb.position.set(Math.cos(time*.36)*2.05,Math.sin(time*.36)*.7,Math.sin(time*.36)*1.75);}
-     sculpture.rotation.y+=(targetX-sculpture.rotation.y)*.05;sculpture.rotation.x+=(targetY-sculpture.rotation.x)*.05;renderer.render(scene,camera);
+     sculpture.rotation.y+=(targetX-sculpture.rotation.y)*.05;sculpture.rotation.x+=(targetY-sculpture.rotation.x)*.05;renderer.render(scene,camera);needsRender=false;
     };
     orb.position.set(1.9,.35,.3);renderer.render(scene,camera);setReady(true);raf=requestAnimationFrame(render);
     dispose=()=>{cancelAnimationFrame(raf);resizeObserver.disconnect();observer.disconnect();el.removeEventListener('pointermove',move);el.removeEventListener('pointerleave',reset);renderer.domElement.removeEventListener('webglcontextlost',onContextLost);geometry.dispose();ringGeometry.dispose();orbGeometry.dispose();material.dispose();ringMaterial.dispose();orbMaterial.dispose();environment.dispose();renderer.dispose();renderer.domElement.remove()};
@@ -63,8 +63,8 @@ export default function KineticScene(){
   <div className="scene-fallback" aria-hidden="true"><i/><i/><i/></div>
   <div className="scene-cross cross-one" aria-hidden="true">+</div><div className="scene-cross cross-two" aria-hidden="true">+</div>
   <span className="scene-label label-support">Support<span>01</span></span><span className="scene-label label-systems">Systems<span>02</span></span>
-  <div className="identity-card"><div className="identity-photo"><img src="/shehab.webp" alt="Shehab Al-Deen Haytham Abedrabuh" width="960" height="960" fetchPriority="high"/></div><div className="identity-caption"><span>THE PERSON BEHIND THE WORK</span><strong>Shehab Abedrabuh</strong><small>Nablus, Palestine <MoveUpRight size={13}/></small></div></div>
-  <div className="stage-bottom"><span>TECHNOLOGY, WITH A HUMAN SIDE.</span>{ready&&<button onClick={()=>setPaused(!paused)} aria-label={paused?'Resume 3D animation':'Pause 3D animation'}>{paused?<Play size={13}/>:<Pause size={13}/>}<span>{paused?'Resume motion':'Pause motion'}</span></button>}</div>
+  <div className="identity-card"><div className="identity-photo"><img src="/shehab.webp" alt="Shehab Abedrabuh" width="960" height="960" fetchPriority="high"/></div><div className="identity-caption"><span>THE PERSON BEHIND THE WORK</span><strong>Always learning.</strong><small>Nablus, Palestine <MoveUpRight size={13}/></small></div></div>
+  <div className="stage-bottom"><span>EXPLORING WHAT COMES NEXT.</span>{ready&&<button onClick={()=>setPaused(!paused)} aria-label={paused?'Resume 3D animation':'Pause 3D animation'}>{paused?<Play size={13}/>:<Pause size={13}/>}<span>{paused?'Resume motion':'Pause motion'}</span></button>}</div>
  </div>
 }
 
