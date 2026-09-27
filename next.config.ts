@@ -7,4 +7,8 @@ const nextConfig: NextConfig = {
   },
 };
 
+<<<<<<< HEAD
 export default nextConfig;
+=======
+export default nextConfig;
+>>>>>>> 8bd677158acee55347e4ca753023449ec028a3b6
