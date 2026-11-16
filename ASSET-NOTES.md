@@ -1,8 +1,5 @@
-# Social preview generation
+# Asset provenance
 
-Tool: built-in Image Generation.
-Output: public/og.png
+The current public/og.png is a 1200 × 630 typographic social card rendered locally with Pillow, using the portfolio’s navy and cyan palette. It contains the owner’s name, professional focus and domain, with no generated portrait or invented credentials.
 
-Prompt: Premium editorial personal portfolio social-sharing card, landscape approximately 1200x630. Clean off-white surface; very soft cool blue-violet luminous abstract gradient on the right, restrained thin technical grid. Crisp black modern sans-serif title aligned left, generous spacing. Exact title: "Shehab Abedrabuh". Exact subline: "Technical Support · Systems & Infrastructure · Junior DevOps". Small domain: "shehab.bio". No people, invented credentials, extra logos or watermark.
-
-The portrait is an optimized copy of the supplied photograph, without AI face editing. The 3D scene is native Three.js geometry and physically based material, rendered at runtime.
+The portrait is the supplied photograph, without AI face editing. The hero workbench and EmuPath platform overview are native HTML/CSS compositions. The platform overview illustrates the supplied project description; it is not presented as a screenshot of the live platform.

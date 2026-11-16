@@ -63,7 +63,7 @@ export default function KineticScene(){
   <div className="scene-fallback" aria-hidden="true"><i/><i/><i/></div>
   <div className="scene-cross cross-one" aria-hidden="true">+</div><div className="scene-cross cross-two" aria-hidden="true">+</div>
   <span className="scene-label label-support">Support<span>01</span></span><span className="scene-label label-systems">Systems<span>02</span></span>
-  <div className="identity-card"><div className="identity-photo"><img src="/shehab.webp" alt="Shehab Abedrabuh" width="960" height="960" fetchPriority="high"/></div><div className="identity-caption"><span>THE PERSON BEHIND THE WORK</span><strong>Always learning.</strong><small>Nablus, Palestine <MoveUpRight size={13}/></small></div></div>
+  <div className="identity-card"><div className="identity-photo"><img src="/shehab.webp" alt="Shehab Al-Deen Abedrabuh" width="960" height="960" fetchPriority="high"/></div><div className="identity-caption"><span>THE PERSON BEHIND THE WORK</span><strong>Always learning.</strong><small>Nablus, Palestine <MoveUpRight size={13}/></small></div></div>
   <div className="stage-bottom"><span>EXPLORING WHAT COMES NEXT.</span>{ready&&<button onClick={()=>setPaused(!paused)} aria-label={paused?'Resume 3D animation':'Pause 3D animation'}>{paused?<Play size={13}/>:<Pause size={13}/>}<span>{paused?'Resume motion':'Pause motion'}</span></button>}</div>
  </div>
 }

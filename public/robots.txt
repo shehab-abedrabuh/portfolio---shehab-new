@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://shehab-abedrabuh.shehabkinglol.chatgpt.site/sitemap.xml
+Sitemap: https://www.shehab.bio/sitemap.xml
